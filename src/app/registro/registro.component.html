@@ -1,0 +1,45 @@
+<div class="container mt-5 mb-5">
+    <div class="row row-flex mt-3">
+      <div class="col-lg-6 p-5 offset-lg-3 border border-primary rounded bg-light mt-5">
+        <form class=" p-3 mb-3 mr-3 ml-3 pr-3 pl-3"
+        [formGroup]="registroForm"
+        (ngSubmit)="onSubmit()">
+              <legend>Registro De Usuario</legend>
+              <div class="mb-3">
+                <label for="Nombre" class="form-label" >Nombre</label>
+                <input type="text" id="Nombre" class="form-control" placeholder="Nombre"  formControlName="nombre">
+              </div>
+              <div class="mb-3">
+                <label for="Apellido" class="form-label" >Apellido</label>
+                <input type="text" id="Apellido" class="form-control" placeholder="Apellido"  formControlName="apellido">
+              </div>
+              <div class="mb-3">
+                <label for="Documento" class="form-label" >Numero documento</label>
+                <input type="number" id="Documento" class="form-control" placeholder="0"  formControlName="numero">
+              </div>
+              <div class="mb-3">
+                <label for="Correo" class="form-label" >Correo</label>
+                <input type="email" id="Correo" class="form-control" placeholder="Example@gmail.com"  formControlName="correo">
+              </div>
+              <div class="mb-3">
+                <label for="Ciudad" class="form-label" >Ciudad</label>
+                <input type="text" id="Ciudad" class="form-control" placeholder="Ciudad"  formControlName="ciudad">
+              </div>
+              <div class="mb-3">
+                <label for="Fecha" class="form-label" >Fecha Nacimiento</label>
+                <input type="text" id="Fecha" class="form-control" placeholder="00/00/0000"  formControlName="fecha">
+              </div>
+              <div class="mb-3">
+                <label for="username" class="form-label" >Username</label>
+                <input type="text" id="username" class="form-control" placeholder="username"  formControlName="username">
+              </div>            
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="Password" class="form-control" placeholder="password"  formControlName="password">
+              </div>                          
+              <button type="submit" [disabled]="!registroForm.valid" class="btn btn-primary ml-3">Agregar</button>
+        </form>
+      </div>
+      
+    </div>
+  </div>

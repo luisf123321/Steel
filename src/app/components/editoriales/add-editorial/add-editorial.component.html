@@ -1,0 +1,33 @@
+<div class="container mt-3 mb-5">
+    <div class="row row-flex mt-3">
+      <div class="col-lg-6 p-5 offset-lg-3 border border-primary rounded bg-light mt-3">
+        <form class=" p-3 mb-3 mr-3 ml-3 pr-3 pl-3"
+        [formGroup]="editorialForm"
+        (ngSubmit)="onSubmit()">
+              <legend>Agregar Editorial</legend>
+              <div class="mb-3">
+                <label for="Nombre" class="form-label" >Nombre</label>
+                <input type="text" id="nombre" class="form-control" placeholder="Nombre"  formControlName="nombre">
+              </div>
+              <div class="mb-3">
+                <label for="fecha" class="form-label">Direccion</label>
+                <input type="text" id="fecha" class="form-control" placeholder="00/00/0000"  formControlName="direccion">
+              </div>
+              <div class="mb-3">
+                <label for="telefono" class="form-label">Telefono</label>
+                <input type="number" id="telefono" class="form-control" placeholder="telefono"  formControlName="telefono">
+              </div>
+              <div class="mb-3">
+                <label for="correo" class="form-label">Correo</label>
+                <input type="email" id="correo" class="form-control" placeholder="correo"  formControlName="correo">
+              </div> 
+              <div class="mb-3">
+                <label for="maximo" class="form-label">Maximo De Libros</label>
+                <input type="number" id="maximo" class="form-control" placeholder=""  formControlName="maximo" >
+              </div>            
+              <button type="submit" [disabled]="!editorialForm.valid" class="btn btn-primary ml-3">Agregar</button>
+        </form>
+      </div>
+    </div>
+</div>
+  

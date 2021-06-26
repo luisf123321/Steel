@@ -1,0 +1,37 @@
+<div class="row row-flex">
+    <div class="col-lg-3 mt-5 p-5 border border-primary rounded bg-light">
+        <form 
+        [formGroup]="buscarForm"
+        (ngSubmit)="onSubmit()">        
+            <legend>Buscar Libro</legend>
+            <div class="mb-3">
+                <label for="Nombre" class="form-label">Nombre Libro</label>
+                <input type="text" id="Nombre" class="form-control" placeholder="Nombre" formControlName="nombre">
+            </div>
+            <div class="mb-3">
+                <label for="disabledSelect" class="form-label">Tipo De Busqueda</label>
+                <select id="disabledSelect" class="form-select" formControlName="opcion">
+                    <option>Nombre</option>
+                    <option>Autor</option>
+                    <option>Editorial</option>
+                </select>
+            </div>          
+            <button type="submit" [disabled]="!buscarForm.valid" class="btn btn-primary ml-3">Buscar</button>       
+        </form>
+    </div>
+    <div class="col-lg-9 p-5">
+        <div class="row row-flex">
+            <div class="col-lg-4" *ngFor="let x of libros">
+                <div class="card" style="width: 16rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{x.Titulo}}</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">{{x.Genero}}</h6>
+                      <h6 class="card-subtitle mb-2 text-muted">Autor: {{x.Autor.Nombre}}</h6>
+                      <p class="card-text">{{x.Descripcion}}</p> 
+                      <h6 class="card-subtitle mb-2 text-muted">Editorial: {{x.Editorial.Nombre}}</h6>                                          
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>    
+</div>

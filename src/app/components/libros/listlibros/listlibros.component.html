@@ -1,0 +1,9 @@
+<div class="container mt-3 mb-5">
+    <h1 >Libros</h1>
+    <a class="btn btn-primary" [routerLink]="['/components/LibrosAdd']">Add</a>
+    <div class="row row-flex mt-3">
+        <div></div>
+        <app-libro *ngFor="let x of libros" [libro]="x"></app-libro>
+    </div>    
+</div>
+

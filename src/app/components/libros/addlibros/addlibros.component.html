@@ -1,0 +1,38 @@
+<div class="container mt-3 mb-5">
+  <div class="row row-flex">
+    <div class="col-lg-6 p-5 offset-lg-3 border border-primary rounded bg-light">
+      <form class=" p-3 mt-3 mb-3 mr-3 ml-3 pr-3 pl-3"
+      [formGroup]="libroForm"
+      (ngSubmit)="onSubmit()">
+            <legend>Agregar Libro</legend>
+            <div class="mb-3 pr-3">
+              <label for="Nombre" class="form-label" >Nombre Libro</label>
+              <input type="text" id="nombre" class="form-control" placeholder="Nombre"  formControlName="nombre">
+            </div>
+            <div class="mb-3 pr-3">
+              <label for="Genero" class="form-label">Genero Literario</label>
+              <input type="text" id="Genero" class="form-control" placeholder="Genero"  formControlName="genero">
+            </div>
+            <div class="mb-3">
+              <label for="Paginas" class="form-label">Numero De Paginas Libro</label>
+              <input type="number" id="Paginas" class="form-control" placeholder="Paginas"  formControlName="paginas">
+            </div>
+            <div class="mb-3">
+              <label for="Autor" class="form-label">Autor</label>
+              <select id="Autor" class="form-select" formControlName="autor">
+                <option>select</option>
+                <option *ngFor="let x of autores, let i = index" [ngValue]="x._id">{{autores[i].Nombre}}</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="Editorial" class="form-label">Editorial</label>
+              <select id="Editorial" class="form-select" formControlName="editorial">
+                <option>select</option>
+                <option *ngFor="let x of editoriales, let i = index" [ngValue]="x._id">{{editoriales[i].Nombre}}</option>
+              </select>
+            </div>
+            <button type="submit" [disabled]="!libroForm.valid" class="btn btn-primary ml-3">Agregar</button>
+      </form>
+    </div>
+  </div>
+</div>
